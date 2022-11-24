@@ -23,5 +23,6 @@ jobs:
         run: |
           java --version
           native-image --version
-          ./gradlew nativeCompile
           ./gradlew bootBuildImage
+          timeout 30 docker run --rm -p 8080:8080 docker.io/library/demo:0.0.1-SNAPSHOT
+
